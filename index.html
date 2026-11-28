@@ -2416,24 +2416,26 @@ function drawDragLayer(t) {
 // ---------------------------------------------------------------
 function drawHUD(t) {
   noStroke();
+  // Skolappars Kotten-knapp: 56 px stor, 12 px från övre vänstra hörnet — håll rutan fri
+  const KX = 76;
   // star counter (top left) — tap to open the sticker album
   fillA('#000000', 14);
-  rect(26, 24, 142, 46, 23);
+  rect(KX + 2, 24, 142, 46, 23);
   fillA('#ffffff', 240);
-  rect(24, 22, 142, 46, 23);
+  rect(KX, 22, 142, 46, 23);
   fill('#f7c948');
-  starShape(52, 45, 14, 6);
+  starShape(KX + 28, 45, 14, 6);
   fill(PAL.ink);
   textAlign(LEFT, CENTER);
   textSize(20);
-  text('× ' + G.stars, 76, 46);
+  text('× ' + G.stars, KX + 52, 46);
   // tiny sticker badge
   fillA('#8fd8c6', 235);
-  ellipse(148, 34, 26, 26);
+  ellipse(KX + 124, 34, 26, 26);
   fill('#1f6b58');
   textAlign(CENTER, CENTER);
   textSize(11);
-  text(stickerCount(), 148, 34);
+  text(stickerCount(), KX + 124, 34);
 
   // scene menu button (top right)
   fillA('#000000', 16)
